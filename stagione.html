@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stagione - FC Cisipenserà</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #000;
+            color: #ff4d94;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: #000;
+            padding: 1rem 2rem;
+            border-bottom: 3px solid #ff4d94;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .logo {
+            height: 60px;
+            width: auto;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .nav-menu a {
+            color: #ff4d94;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.4rem 0.8rem;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        
+        .nav-menu a:hover {
+            color: #000;
+            background: #ff4d94;
+        }
+
+        .main-content {
+            margin-top: 100px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .season-container {
+            background: #ff4d94;
+            padding: 40px;
+            border-radius: 12px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(0,0,0,0.3);
+        }
+        
+        .squadra-nome {
+            font-size: 2.8em;
+            font-weight: 700;
+            color: #000;
+            margin: 0;
+        }
+        
+        .squadra-sigla {
+            font-size: 1.4em;
+            font-weight: 300;
+            color: rgba(0,0,0,0.7);
+            margin-top: 8px;
+        }
+
+        .page-title {
+            text-align: center;
+            color: #000;
+            font-size: 2em;
+            margin: 20px 0;
+        }
+
+        /* CALENDARIO */
+        .matches-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .match-card {
+            background: #000;
+            border: 2px solid #ff4d94;
+            border-radius: 10px;
+            padding: 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .team {
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .vs {
+            color: #ff4d94;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .match-info {
+            text-align: center;
+            color: #ff80b3;
+            font-size: 0.9rem;
+        }
+        
+        .result {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff4d94;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #000;
+            font-size: 1.8em;
+            margin: 40px 0 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <img src="logo3.jpg" alt="FC Cisipenserà CSP" class="logo">
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="stagione.html">STAGIONE</a></li>
+                <li><a href="team.html">TEAM</a></li>
+                <li><a href="statistiche.html">STATISTICHE</a></li>
+                <li><a href="sponsor.html">SPONSOR</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="contatti.html">CONTATTI</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="season-container">
+            <div class="page-header">
+                <div class="squadra-nome">FC Cisipenserà</div>
+                <div class="squadra-sigla">CSP</div>
+                <h1 class="page-title">📅 Stagione 2024-2025</h1>
+            </div>
+
+            <!-- PROSSIME PARTITE -->
+            <h2 class="section-title">⏳ Prossime Partite</h2>
+            <div class="matches-grid">
+                <div class="match-card">
+                    <div class="team">FC Cisipenserà</div>
+                    <div class="vs">VS</div>
+                    <div class="team">Avversari FC</div>
+                    <div class="match-info">15 Set 2024 - 21:00<br>Campo Comunale</div>
+                    <div class="result">-</div>
+                    <div class="match-info">Campionato</div>
+                </div>
+                
+                <div class="match-card">
+                    <div class="team">FC Cisipenserà</div>
+                    <div class="vs">VS</div>
+                    <div class="team">Dream Team</div>
+                    <div class="match-info">22 Set 2024 - 20:30<br>Palasport</div>
+                    <div class="result">-</div>
+                    <div class="match-info">Coppa</div>
+                </div>
+            </div>
+
+            <!-- ULTIME PARTITE -->
+            <h2 class="section-title">✅ Ultime Partite</h2>
+            <div class="matches-grid">
+                <div class="match-card">
+                    <div class="team">FC Cisipenserà</div>
+                    <div class="vs">VS</div>
+                    <div class="team">Real Camporada</div>
+                    <div class="match-info">13 Feb 2025</div>
+                    <div class="result">4-7</div>
+                    <div class="match-info">Campionato</div>
+                </div>
+                
+                <div class="match-card">
+                    <div class="team">FC Cisipenserà</div>
+                    <div class="vs">VS</div>
+                    <div class="team">LA D10S</div>
+                    <div class="match-info">17 Feb 2025</div>
+                    <div class="result">7-5</div>
+                    <div class="match-info">Campionato</div>
+                </div>
+            </div>
+
+            <!-- CLASSIFICA -->
+            <h2 class="section-title">🏆 Classifica Campionato</h2>
+            <div style="background: #000; padding: 2rem; border-radius: 10px; margin-top: 2rem;">
+                <p style="text-align: center; color: #ff4d94;">Classifica in aggiornamento...</p>
+                <p style="text-align: center; color: #ff80b3; margin-top: 1rem;">La classifica verrà aggiornata a breve con l'inizio del nuovo campionato</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

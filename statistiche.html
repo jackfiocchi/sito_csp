@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiche - FC Cisipenserà</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #000;
+            color: #ff4d94;
+            min-height: 100vh;
+        }
+        
+        /* HEADER PERFETTO */
+        .header {
+            background: #000;
+            padding: 1rem 2rem;
+            border-bottom: 3px solid #ff4d94;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .logo {
+            height: 60px;
+            width: auto;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .nav-menu a {
+            color: #ff4d94;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.4rem 0.8rem;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        
+        .nav-menu a:hover {
+            color: #000;
+            background: #ff4d94;
+        }
+
+        /* CONTENUTO STATISTICHE */
+        .main-content {
+            margin-top: 100px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .stats-container {
+            background: #ff4d94;
+            padding: 40px;
+            border-radius: 12px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(0,0,0,0.3);
+        }
+        
+        .squadra-nome {
+            font-size: 2.8em;
+            font-weight: 700;
+            color: #000;
+            margin: 0;
+        }
+        
+        .squadra-sigla {
+            font-size: 1.4em;
+            font-weight: 300;
+            color: rgba(0,0,0,0.7);
+            margin-top: 8px;
+        }
+
+        /* TITOLO CON EMOJI CENTRATA */
+        .page-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            font-size: 2em;
+            color: #000;
+        }
+
+        /* SELEZIONE ANNO */
+        .anno-selector {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .anno-selector select {
+            background: #000;
+            color: #ff4d94;
+            border: 2px solid #ff4d94;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* TABELLE */
+        table { 
+            border-collapse: collapse; 
+            width: 100%; 
+            margin: 30px 0;
+            background: #000;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td { 
+            border: none;
+            padding: 12px 8px; 
+            text-align: center;
+            color: #ff4d94;
+        }
+        
+        th { 
+            background: #000; 
+            color: #ff4d94;
+            font-weight: 600;
+            border-bottom: 2px solid #ff4d94;
+            cursor: pointer;
+        }
+        
+        td {
+            border-bottom: 1px solid #333;
+            font-size: 0.9em;
+        }
+        
+        .sortable::after { content: "↕"; margin-left: 5px; }
+        .sorted-asc::after { content: "↑"; }
+        .sorted-desc::after { content: "↓"; }
+
+        .rank-1 { background: #ffd700 !important; }
+        .rank-1 td { color: #000 !important; }
+        .rank-2 { background: #c0c0c0 !important; }
+        .rank-2 td { color: #000 !important; }
+        .rank-3 { background: #87ceeb !important; }
+        .rank-3 td { color: #000 !important; }
+
+        tr:hover { background: #333; }
+
+        /* TITOLI SEZIONI CENTRATI */
+        .section-title {
+            text-align: center;
+            color: #000;
+            font-size: 1.8em;
+            margin: 40px 0 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="nav-container">
+            <img src="logo3.jpg" alt="FC Cisipenserà CSP" class="logo">
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="stagione.html">STAGIONE</a></li>
+                <li><a href="team.html">TEAM</a></li>
+                <li><a href="statistiche.html">STATISTICHE</a></li>
+                <li><a href="sponsor.html">SPONSOR</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="contatti.html">CONTATTI</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- STATISTICHE -->
+    <main class="main-content">
+        <div class="stats-container">
+            <div class="page-header">
+                <div class="squadra-nome">FC Cisipenserà</div>
+                <div class="squadra-sigla">CSP</div>
+                <!-- TITOLO CON EMOJI PERFETTAMENTE CENTRATA -->
+                <div class="page-title">
+                    <span>🏆</span> Statistiche Calcetto <span>🏆</span>
+                </div>
+            </div>
+            
+            <!-- SELEZIONE ANNO -->
+            <div class="anno-selector">
+                <select id="anno-select" onchange="cambiaStagione()">
+                    <option value="2025">Stagione 2024-2025</option>
+                    <option value="2026">Stagione 2025-2026</option>
+                </select>
+            </div>
+
+            <!-- STATISTICHE 2024-2025 -->
+            <div id="stats-2025">
+                <!-- TITOLO PODIO CENTRATO -->
+                <div class="section-title">
+                    <span>🎯</span> PODIO MARCATORI 2024-2025 <span>🎯</span>
+                </div>
+                
+                <table>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Giocatore</th>
+                        <th>Presenze</th>
+                        <th>Gol</th>
+                        <th>Media</th>
+                    </tr>
+                    <tr class="rank-1">
+                        <td>🥇</td>
+                        <td>Sotto</td>
+                        <td>25</td>
+                        <td>48</td>
+                        <td>1.92</td>
+                    </tr>
+                    <tr class="rank-2">
+                        <td>🥈</td>
+                        <td>Belfio</td>
+                        <td>33</td>
+                        <td>46</td>
+                        <td>1.39</td>
+                    </tr>
+                    <tr class="rank-3">
+                        <td>🥉</td>
+                        <td>Pini</td>
+                        <td>25</td>
+                        <td>36</td>
+                        <td>1.44</td>
+                    </tr>
+                </table>
+
+                <!-- TITOLO CLASSIFICA CENTRATO -->
+                <div class="section-title">
+                    <span>📊</span> CLASSIFICA COMPLETA 2024-2025 <span>📊</span>
+                </div>
+                
+                <table id="classifica-2025">
+                    <thead>
+                        <tr>
+                            <th class="sortable" data-sort="pos">Pos</th>
+                            <th class="sortable" data-sort="nome">Giocatore</th>
+                            <th class="sortable" data-sort="presenze">Presenze</th>
+                            <th class="sortable" data-sort="gol">Gol</th>
+                            <th class="sortable" data-sort="media">Media</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Sotto</td><td>25</td><td>48</td><td>1.92</td></tr>
+                        <tr><td>2</td><td>Belfio</td><td>33</td><td>46</td><td>1.39</td></tr>
+                        <tr><td>3</td><td>Pini</td><td>25</td><td>36</td><td>1.44</td></tr>
+                        <tr><td>4</td><td>Inco</td><td>29</td><td>23</td><td>0.79</td></tr>
+                        <tr><td>5</td><td>Pippo</td><td>24</td><td>21</td><td>0.88</td></tr>
+                        <tr><td>6</td><td>Prof</td><td>30</td><td>16</td><td>0.53</td></tr>
+                        <tr><td>7</td><td>Ricciu</td><td>16</td><td>19</td><td>1.19</td></tr>
+                        <tr><td>8</td><td>Salva</td><td>18</td><td>15</td><td>0.83</td></tr>
+                        <tr><td>9</td><td>Matte</td><td>14</td><td>9</td><td>0.64</td></tr>
+                        <tr><td>10</td><td>Eli</td><td>19</td><td>7</td><td>0.37</td></tr>
+                        <tr><td>11</td><td>Ghila</td><td>12</td><td>7</td><td>0.58</td></tr>
+                        <tr><td>12</td><td>Meriggioli</td><td>7</td><td>3</td><td>0.43</td></tr>
+                        <tr><td>13</td><td>Stefo</td><td>6</td><td>3</td><td>0.50</td></tr>
+                        <tr><td>14</td><td>Biso</td><td>24</td><td>2</td><td>0.08</td></tr>
+                        <tr><td>15</td><td>Gava</td><td>1</td><td>2</td><td>2.00</td></tr>
+                        <tr><td>16</td><td>Ricca</td><td>1</td><td>2</td><td>2.00</td></tr>
+                        <tr><td>17</td><td>Jack</td><td>19</td><td>1</td><td>0.05</td></tr>
+                        <tr><td>18</td><td>T.Bati</td><td>1</td><td>0</td><td>0.00</td></tr>
+                        <tr><td>19</td><td>I.Bati</td><td>1</td><td>0</td><td>0.00</td></tr>
+                        <tr><td>20</td><td>Dodo</td><td>1</td><td>0</td><td>0.00</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- STATISTICHE 2025-2026 -->
+            <div id="stats-2026" style="display: none;">
+                <div class="section-title">
+                    <span>🎯</span> PODIO MARCATORI 2025-2026 <span>🎯</span>
+                </div>
+                <p style="text-align: center; color: #000; font-size: 1.2rem;">
+                    Stagione in preparazione... I dati saranno disponibili a breve!
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function cambiaStagione() {
+            const anno = document.getElementById('anno-select').value;
+            
+            if (anno === '2025') {
+                document.getElementById('stats-2025').style.display = 'block';
+                document.getElementById('stats-2026').style.display = 'none';
+            } else {
+                document.getElementById('stats-2025').style.display = 'none';
+                document.getElementById('stats-2026').style.display = 'block';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const table = document.getElementById('classifica-2025');
+            const headers = table.querySelectorAll('th.sortable');
+            const tbody = table.querySelector('tbody');
+            
+            let currentSort = { column: 'gol', direction: 'desc' };
+            
+            headers.forEach(header => {
+                header.addEventListener('click', () => {
+                    const column = header.dataset.sort;
+                    
+                    if (currentSort.column === column) {
+                        currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+                    } else {
+                        currentSort = { column, direction: 'desc' };
+                    }
+                    
+                    sortTable(column, currentSort.direction);
+                    updateHeaderStyles();
+                });
+            });
+            
+            function sortTable(column, direction) {
+                const rows = Array.from(tbody.querySelectorAll('tr'));
+                
+                rows.sort((a, b) => {
+                    let aValue = a.cells[getColumnIndex(column)].textContent;
+                    let bValue = b.cells[getColumnIndex(column)].textContent;
+                    
+                    aValue = isNaN(aValue) ? aValue : parseFloat(aValue);
+                    bValue = isNaN(bValue) ? bValue : parseFloat(bValue);
+                    
+                    if (direction === 'asc') {
+                        return aValue > bValue ? 1 : -1;
+                    } else {
+                        return aValue < bValue ? 1 : -1;
+                    }
+                });
+                
+                while (tbody.firstChild) {
+                    tbody.removeChild(tbody.firstChild);
+                }
+                
+                rows.forEach(row => tbody.appendChild(row));
+                updatePositionNumbers();
+            }
+            
+            function getColumnIndex(column) {
+                const headersMap = { pos: 0, nome: 1, presenze: 2, gol: 3, media: 4 };
+                return headersMap[column];
+            }
+            
+            function updatePositionNumbers() {
+                const rows = tbody.querySelectorAll('tr');
+                rows.forEach((row, index) => {
+                    row.cells[0].textContent = index + 1;
+                });
+            }
+            
+            function updateHeaderStyles() {
+                headers.forEach(header => {
+                    header.classList.remove('sorted-asc', 'sorted-desc');
+                    if (header.dataset.sort === currentSort.column) {
+                        header.classList.add(currentSort.direction === 'asc' ? 'sorted-asc' : 'sorted-desc');
+                    }
+                });
+            }
+            
+            sortTable('gol', 'desc');
+            updateHeaderStyles();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sponsor - FC Cisipenserà</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #000;
+            color: #ff4d94;
+            min-height: 100vh;
+        }
+        
+        /* HEADER PERFETTO - COPIA QUESTA PARTE IN TUTTE LE PAGINE */
+.header {
+    background: #000;
+    padding: 1rem 2rem;
+    border-bottom: 3px solid #ff4d94;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-menu a {
+    color: #ff4d94;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.nav-menu a:hover {
+    color: #000;
+    background: #ff4d94;
+}
+
+.main-content {
+    margin-top: 100px; /* IMPORTANTE: aggiungi questo a tutte le pagine */
+    padding: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            height: 60px;
+            width: auto;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+        
+        .nav-menu a {
+            color: #ff4d94;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: #000;
+            background: #ff4d94;
+        }
+
+        /* CONTENUTO SPONSOR */
+        .main-content {
+            margin-top: 100px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .sponsor-container {
+            background: #ff4d94;
+            padding: 40px;
+            border-radius: 12px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(0,0,0,0.3);
+        }
+        
+        .squadra-nome {
+            font-size: 2.8em;
+            font-weight: 700;
+            color: #000;
+            margin: 0;
+        }
+        
+        .squadra-sigla {
+            font-size: 1.4em;
+            font-weight: 300;
+            color: rgba(0,0,0,0.7);
+            margin-top: 8px;
+        }
+		
+		/* TITOLO CON EMOJI CENTRATA */
+        .page-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            font-size: 2em;
+            color: #000;
+        }
+
+        /* SPONSOR GRID */
+        .sponsor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .sponsor-card {
+            background: #000;
+            border: 2px solid #ff4d94;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .sponsor-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .sponsor-logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .sponsor-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ff4d94;
+        }
+        
+        .sponsor-desc {
+            color: #ff80b3;
+            line-height: 1.6;
+        }
+        
+        .sponsor-contact {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #ff80b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER IDENTICO -->
+    <header class="header">
+        <nav class="nav-container">
+            <img src="logo3.jpg" alt="FC Cisipenserà CSP" class="logo">
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="stagione.html">STAGIONE</a></li>
+                <li><a href="team.html">TEAM</a></li>
+                <li><a href="statistiche.html">STATISTICHE</a></li>
+                <li><a href="sponsor.html">SPONSOR</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="contatti.html">CONTATTI</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SPONSOR -->
+    <main class="main-content">
+        <div class="sponsor-container">
+            <div class="page-header">
+                <div class="squadra-nome">FC Cisipenserà</div>
+                <div class="squadra-sigla">CSP</div>
+				<div class="page-title">
+                <span>🤝</span>I Nostri Sponsor<span>🤝</span>
+				</div>
+
+            <p style="text-align: center; color: #000; font-size: 1.2rem; margin-bottom: 3rem;">
+                Un ringraziamento speciale ai nostri partner che supportano la squadra!
+            </p>
+
+            <!-- SPONSOR 1 -->
+            <div class="sponsor-grid">
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">🏢</div>
+                    <div class="sponsor-name">Sponsor Principale</div>
+                    <div class="sponsor-desc">
+                        Il nostro sponsor principale che supporta la squadra con entusiasmo e professionalità.
+                    </div>
+                    <div class="sponsor-contact">
+                        📧 info@sponsorprincipale.it<br>
+                        🌐 www.sponsorprincipale.it
+                    </div>
+                </div>
+
+                <!-- SPONSOR 2 -->
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">⚡</div>
+                    <div class="sponsor-name">Partner Tecnico</div>
+                    <div class="sponsor-desc">
+                        Fornitore ufficiale dell'attrezzatura sportiva e del materiale tecnico della squadra.
+                    </div>
+                    <div class="sponsor-contact">
+                        📧 tecnico@partner.it<br>
+                        🌐 www.partnertecnico.it
+                    </div>
+                </div>
+
+                <!-- SPONSOR 3 -->
+                <div class="sponsor-card">
+                    <div class="sponsor-logo">🍕</div>
+                    <div class="sponsor-name">Sponsor Ufficiale</div>
+                    <div class="sponsor-desc">
+                        Supporta la squadra con energia e dedizione. Un partner fondamentale per il nostro progetto.
+                    </div>
+                    <div class="sponsor-contact">
+                        📧 ufficiale@sponsor.it<br>
+                        🌐 www.sponsorufficiale.it
+                    </div>
+                </div>
+            </div>
+
+            <!-- DIVENTA SPONSOR -->
+            <div style="text-align: center; margin-top: 4rem; padding: 2rem; background: #000; border-radius: 10px;">
+                <h2 style="color: #ff4d94; margin-bottom: 1rem;">💼 Diventa Sponsor</h2>
+                <p style="color: #ff80b3;">Sei interessato a supportare la nostra squadra? Contattaci!</p>
+                <p style="color: #ff4d94; font-weight: 600; margin-top: 1rem;">📧 fc.cisipensera@gmail.com</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

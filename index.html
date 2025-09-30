@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC Cisipenserà - Sito Ufficiale</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #000;
+            color: #ff4d94;
+            min-height: 100vh;
+        }
+        
+        /* HEADER PERFETTO - QUESTA VOLTA FUNZIONA */
+        .header {
+            background: #000;
+            padding: 1rem 2rem;
+            border-bottom: 3px solid #ff4d94;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .logo {
+            height: 60px;
+            width: auto;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .nav-menu a {
+            color: #ff4d94;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.4rem 0.8rem;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        
+        .nav-menu a:hover {
+            color: #000;
+            background: #ff4d94;
+        }
+
+        .main-content {
+            margin-top: 100px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero {
+            background: #ff4d94;
+            color: #000;
+            padding: 4rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section {
+            background: #000;
+            border: 2px solid #ff4d94;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section h2 {
+            color: #ff4d94;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #ff4d94;
+            padding-bottom: 0.5rem;
+        }
+
+        #area-admin {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <img src="logo3.jpg" alt="FC Cisipenserà CSP" class="logo">
+            <ul class="nav-menu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="stagione.html">STAGIONE</a></li>
+                <li><a href="team.html">TEAM</a></li>
+                <li><a href="statistiche.html">STATISTICHE</a></li>
+                <li><a href="sponsor.html">SPONSOR</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+                <li><a href="contatti.html">CONTATTI</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="hero">
+            <h1>FC CISIPENSERÀ</h1>
+            <p>La squadra di calcetto che unisce passione, amicizia e competizione</p>
+        </section>
+
+        <section class="section">
+            <h2>👋 CHI SIAMO</h2>
+            <p>Benvenuti sul sito ufficiale della FC Cisipenserà! Siamo una squadra di calcetto amatoriale nata dalla passione per il calcio e dall'amicizia. Giochiamo nel campionato locale con l'obiettivo di divertirci e migliorarci partita dopo partita.</p>
+        </section>
+
+        <section class="section">
+            <h2>🔐 ACCESSO AMMINISTRATORE</h2>
+            <input type="password" id="password-input" placeholder="Inserisci password">
+            <button onclick="accediAdmin()">Accedi</button>
+        </section>
+
+        <section class="section" id="area-admin">
+            <h2>📝 INSERISCI NUOVA PARTITA</h2>
+            <form id="form-partita">
+                <input type="date" id="data-partita" required>
+                <input type="text" id="avversario" placeholder="Avversario" required>
+                <input type="number" id="gol-fatti" placeholder="Gol fatti" required>
+                <input type="number" id="gol-subiti" placeholder="Gol subiti" required>
+                <button type="submit">Aggiungi Partita</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        function accediAdmin() {
+            if (document.getElementById('password-input').value === 'CSP2024') {
+                document.getElementById('area-admin').style.display = 'block';
+                alert('Accesso consentito!');
+            } else {
+                alert('Password errata!');
+            }
+        }
+
+        document.getElementById('form-partita').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Partita aggiunta!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
